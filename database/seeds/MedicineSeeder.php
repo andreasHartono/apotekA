@@ -13,7 +13,7 @@ class MedicineSeeder extends Seeder
     {
         DB::table('medicines')->insert([
             'medicines_name' => 'amitriptilin',
-            'medicines_form' => '1. tab 25 mg',
+            'medicines_form' => 'tab 25 mg',
             'medicines_formula' => '60 tab/bulan.',
             'description' => '',
             'faskes_1' => true,
@@ -25,7 +25,7 @@ class MedicineSeeder extends Seeder
 
         DB::table('medicines')->insert([
             'medicines_name' => 'sertralin',
-            'medicines_form' => '1. tab sal 25 mg',
+            'medicines_form' => 'tab sal 25 mg',
             'medicines_formula' => '30 tab/bulan.',
             'description' => 'Digunakan untuk depresi yang 
             disertai ansietas.',
@@ -38,7 +38,7 @@ class MedicineSeeder extends Seeder
 
         DB::table('medicines')->insert([
             'medicines_name' => 'flufenazin',
-            'medicines_form' => '1. inj 25 mg/mL (i.m.)',
+            'medicines_form' => 'inj 25 mg/mL (i.m.)',
             'medicines_formula' => '1 amp/ 2 minggu',
             'description' => 'Hanya untuk rumatan pada pasien skizofrenia.',
             'faskes_1' => false,
@@ -50,7 +50,7 @@ class MedicineSeeder extends Seeder
 
         DB::table('medicines')->insert([
             'medicines_name' => 'trifluoperazin',
-            'medicines_form' => '1. tab sal selaput 5 mg',
+            'medicines_form' => 'tab sal selaput 5 mg',
             'medicines_formula' => '90 tab/bulan.',
             'description' => 'Hanya dapat diresepkan oleh Dokter Spesialis Kedokteran Jiwa.',
             'faskes_1' => false,
