@@ -22,3 +22,4 @@ Route::get('/home', function () {
 });
 
 Route::resource('medicine', 'MedicineController');
+Route::resource('category', 'CategoryController');
