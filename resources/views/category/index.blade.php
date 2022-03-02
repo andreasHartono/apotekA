@@ -25,12 +25,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($hasil as $d)
-                    <tr>
-                        <td>{{ $d->name }}</td>
-                        <td>{{ $d->description }}</td>
-                    </tr>
-                @endforeach
+               @foreach ($hasil as $d)
+               <tr>
+                  <td>{{ $d->name }}</td>
+                  <td>{{ $d->description }}</td>
+               </tr>
+               @endforeach
             </tbody>
         </table>
 

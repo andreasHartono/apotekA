@@ -19,22 +19,22 @@
         <h2>LIST MEDICINE</h2>
         <table class="table table-hover">
             <thead>
-                <tr>
-                    <th>Nama</th>
-                    <th>Bentuk</th>
-                    <th>Formula</th>
-                    <th>Harga</th>
-                </tr>
+               <tr>
+                  <th>Nama</th>
+                  <th>Bentuk</th>
+                  <th>Formula</th>
+                  <th>Harga</th>
+               </tr>
             </thead>
             <tbody>
-                @foreach ($data as $d)
-                    <tr>
-                        <td>{{ $d->generic_name }}</td>
-                        <td>{{ $d->form }}</td>
-                        <td>{{ $d->restriction_formula }}</td>
-                        <td>{{ $d->price }}</td>
-                    </tr>
-                @endforeach
+               @foreach ($data as $d)
+               <tr>
+                  <td>{{ $d->generic_name }}</td>
+                  <td>{{ $d->form }}</td>
+                  <td>{{ $d->restriction_formula }}</td>
+                  <td>{{ $d->price }}</td>
+               </tr>
+               @endforeach
             </tbody>
         </table>
 
