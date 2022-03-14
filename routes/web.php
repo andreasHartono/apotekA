@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
 });
 
 Route::get('/home', function () {
-    return view('home');
+   return view('home');
 });
 
-Route::resource('medicine', 'MedicineController');
-Route::resource('category', 'CategoryController');
+Route::resource('medicines', 'MedicineController');
+Route::resource('categories', 'CategoryController');
+Route::get('coba1', 'MedicineController@coba1');
+Route::get('coba2', 'MedicineController@coba2');

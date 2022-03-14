@@ -22,6 +22,7 @@
                 <tr>
                     <th>Nama</th>
                     <th>Description</th>
+                    <th>Obat-obat</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,11 @@
                <tr>
                   <td>{{ $d->name }}</td>
                   <td>{{ $d->description }}</td>
+                  <td>
+                     @foreach ($d->medicines as $m)
+                        {{ $m->generic_name }} ({{ $m->form }})<br>
+                     @endforeach
+                  </td>
                </tr>
                @endforeach
             </tbody>
