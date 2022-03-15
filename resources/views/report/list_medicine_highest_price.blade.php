@@ -3,8 +3,8 @@
    <div class="portlet">
       <div class="portlet-title">
          <div class="caption">
-            <b>List Medicines by Highest Price</b><hr>
-            <p>Highest Price : Rp.{{$result[0]->tertinggi}},00</p><hr> 
+            <b>Report Daftar Obat Harga Tertinggi</b><hr>
+            <p>Harga Tertinggi : Rp.{{$result[0]->tertinggi}},00</p><hr> 
          </div>
       </div>
       <div class="portlet-body">
