@@ -81,7 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    APOTEK
+                    <img src="{{ asset('assets/images/kimia-farma-logo.jpg') }}" alt="">
+                    <h1>APOTEK A</h1>
                 </div>
 
                 <div class="links">

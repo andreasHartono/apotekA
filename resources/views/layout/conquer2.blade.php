@@ -51,7 +51,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <div class="header-inner">
         <!-- BEGIN LOGO -->
       <div class="page-logo">
-         <a href="{{ url('/') }}"><img src="{{ asset('assets/img/logo.png') }}" alt="logo"/></a>
+         <a href="{{ url('/') }}"><img src="{{ asset('assets/img/logo.png') }}" alt="logo" /></a>
       </div>
       <form class="search-form search-form-header" role="form" action="{{ url('/') }}">
          <div class="input-icon right">
@@ -322,7 +322,7 @@ License: You must have a valid license purchased only from themeforest(the above
    <!-- BEGIN FOOTER -->
    <div class="footer">
       <div class="footer-inner">
-         2013 &copy; Conquer by keenthemes.
+        Kementrian Kesehatan Republik Indonesia. Kimia Farma
       </div>
       <div class="footer-tools">
          <span class="go-top">
