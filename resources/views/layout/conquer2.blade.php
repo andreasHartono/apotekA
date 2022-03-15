@@ -290,7 +290,7 @@ License: You must have a valid license purchased only from themeforest(the above
                      </li>
                      <li>
                         <a href="{{ url('/showgrid') }}">
-                        <i class="fa fa-medkit"></i>
+                        <i class="fa fa-stethoscope"></i>
                         Master Medicines BY Grid</a>
                      </li>
                   </ul>
@@ -307,6 +307,11 @@ License: You must have a valid license purchased only from themeforest(the above
                         <a href="{{ url('report/listhighestprice') }}">
                            <i class="fa fa-user-md"></i>
                            Report Highest Price</a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <i class="fa fa-h-square"></i>
+                           Report Medicine By Category</a>
                      </li>
                   </ul>
                </li>

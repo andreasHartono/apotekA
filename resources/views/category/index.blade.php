@@ -11,7 +11,7 @@
                   <tr>
                      <th>Nama</th>
                      <th>Description</th>
-                     <th>Obat-obat</th>
+                     <th>Obat - obat</th>
                   </tr>
                </thead>
                <tbody>
