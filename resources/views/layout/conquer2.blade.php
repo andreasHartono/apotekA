@@ -298,11 +298,11 @@ License: You must have a valid license purchased only from themeforest(the above
                   <span class="arrow open"></span>
                   </a>
                   <ul class="sub-menu">
-                     {{-- <li>
-                        <a href="{{ route('reportShowMedicine') }}">
+                     <li>
+                        <a href="#">
                            <i class="fa fa-medkit"></i>
                            Report Medicines By Category</a>
-                     </li> --}}
+                     </li>
                   </ul>
                </li>
             </ul>
