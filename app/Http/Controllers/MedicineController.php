@@ -185,6 +185,21 @@ class MedicineController extends Controller
             $join->on('medicines.price', '=', 'm2.tertinggi');
          })->get();
 
+      // dd($sub);
       dd($res);
+   }
+
+   public function showlisthighestprice()
+   {
+      $sub = DB::table('medicines')
+         ->select(DB::raw('MAX(price) AS tertinggi'));
+
+      $result = DB::table('medicines')
+         ->join('categories', 'medicines.category_id', '=', 'categories.id')
+         ->joinSub($sub, 'm2', function ($join) {
+            $join->on('medicines.price', '=', 'm2.tertinggi');
+         })->get();
+
+      return view('report.list_medicine_highest_price', compact('result'));
    }
 }
