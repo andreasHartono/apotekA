@@ -189,6 +189,12 @@ class MedicineController extends Controller
       dd($res);
    }
 
+   public function showgrid()
+   {
+      $result = Medicine::all();
+      return view('medicine.showgrid', compact('result'));
+   }
+
    public function showlisthighestprice()
    {
       $sub = DB::table('medicines')

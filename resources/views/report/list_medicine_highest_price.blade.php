@@ -4,7 +4,9 @@
       <div class="portlet-title">
          <div class="caption">
             <b>Report Daftar Obat Harga Tertinggi</b><hr>
+            <p>Nama Obat : {{ $result[0]->generic_name }}</p><hr>
             <p>Harga Tertinggi : Rp.{{$result[0]->tertinggi}},00</p><hr> 
+            <p>Detil Obat</p><hr>
          </div>
       </div>
       <div class="portlet-body">

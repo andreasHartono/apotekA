@@ -3,7 +3,7 @@
    <div class="portlet">
       <div class="portlet-title">
          <div class="caption">
-            <b>List Medicines by Category</b><hr>
+            <b>Report Obat Berdasarkan Kategori</b><hr>
             <p>ID Category : {{$id_category}} with name : {{$namecategory}}</p><hr>
             <p>Total Rows : {{$getTotalData}}</p>
          </div>
