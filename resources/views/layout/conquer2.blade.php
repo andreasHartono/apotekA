@@ -180,7 +180,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <ul class="dropdown-menu extended tasks">
                         <li>
                             <p>
-                                You have 12 pending tasks
+                                You have 3 pending tasks
                             </p>
                         </li>
                         <li>
@@ -293,17 +293,20 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li>
                                 <a href="{{ url('/categories') }}">
                                     <i class="fa fa-bookmark"></i>
-                                    Master Category</a>
+                                    Master Category
+                                </a>
                             </li>
                             <li>
                                 <a href="{{ url('/medicines') }}">
                                     <i class="fa fa-medkit"></i>
-                                    Master Medicines</a>
+                                    Master Medicines
+                                </a>
                             </li>
                             <li>
                                 <a href="{{ url('/showgrid') }}">
                                     <i class="fa fa-stethoscope"></i>
-                                    Master Medicines BY Grid</a>
+                                    Master Medicines BY Grid
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -318,12 +321,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li>
                                 <a href="{{ url('report/listhighestprice') }}">
                                     <i class="fa fa-user-md"></i>
-                                    Report Highest Price</a>
+                                    Report Highest Price
+                                </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <i class="fa fa-h-square"></i>
-                                    Report Medicine By Category</a>
+                                    Report Medicine By Category
+                                </a>
                             </li>
                         </ul>
                     </li>
