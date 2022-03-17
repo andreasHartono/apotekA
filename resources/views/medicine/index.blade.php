@@ -3,8 +3,8 @@
    <div class="portlet">
       <div class="portlet-title">
          <div class="caption">
-				<b>DAFTAR OBAT</b>
-			</div>
+            <b>DAFTAR OBAT</b>
+          </div>
       </div>
       <div class="portlet-body">
          <div class="table-responsive">
@@ -35,5 +35,5 @@
          </div>
       </div>
    </div>
-   
+
 @endsection

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<!-- 
+    <!--
 Template Name: Conquer - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 2.0
 Author: KeenThemes
@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <html lang="en" class="no-js">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
-	<head>
+    <head>
 <meta charset="utf-8"/>
 <title>Kimia Farma</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +46,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN BODY -->
 <body class="page-header-fixed">
 <!-- BEGIN HEADER -->
-	<div class="header navbar  navbar-fixed-top">
+    <div class="header navbar  navbar-fixed-top">
     <!-- BEGIN TOP NAVIGATION BAR -->
     <div class="header-inner">
         <!-- BEGIN LOGO -->
@@ -59,7 +59,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <input type="text" class="form-control input-sm" name="query" placeholder="Search...">
          </div>
       </form>
-	   <!-- END LOGO -->
+       <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
         <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <img src="{{ asset('assets/img/menu-toggler.png') }}" alt=""/>
@@ -118,7 +118,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <ul class="dropdown-menu extended inbox">
                     <li>
                         <p>
-                           You have 12 new messages
+                           You have 3 new messages
                         </p>
                     </li>
                     <li>
@@ -237,10 +237,10 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- END USER LOGIN DROPDOWN -->
         </ul>
         <!-- END TOP NAVIGATION MENU -->
-    </div>  
+    </div>
     <!-- END TOP NAVIGATION BAR -->
 </div>
-	<!-- END HEADER -->
+    <!-- END HEADER -->
    <div class="clearfix"></div>
    <!-- BEGIN CONTAINER -->
    <div class="page-container">
@@ -357,7 +357,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{ asset('assets/scripts/app.js') }}"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-jQuery(document).ready(function() {       
+jQuery(document).ready(function() {
    // initiate layout and plugins
    App.init();
 });
