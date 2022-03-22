@@ -92,10 +92,12 @@ class CategoryController extends Controller
 
       if ($result) $getTotalData = $result->count();
       else $getTotalData = 0;
-
-      return view(
-         'report.list_medicines_by_category',
-         compact('id_category', 'namecategory', 'result', 'getTotalData')
-      );
+      return response()->json(array(
+         'status' => 'oke',
+         'msg' => view(
+            'report.list_medicines_by_category',
+            compact('id_category', 'namecategory', 'result', 'getTotalData')
+         )->render()
+      ), 200);
    }
 }

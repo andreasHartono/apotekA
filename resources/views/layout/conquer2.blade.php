@@ -45,6 +45,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" type="text/css" />
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
+
+    @yield('javascript')
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -305,7 +307,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li>
                                 <a href="{{ url('/showgrid') }}">
                                     <i class="fa fa-stethoscope"></i>
-                                    Master Medicines BY Grid
+                                    Master Medicines By Grid
                                 </a>
                             </li>
                         </ul>
@@ -318,18 +320,12 @@ License: You must have a valid license purchased only from themeforest(the above
                             <span class="arrow open"></span>
                         </a>
                         <ul class="sub-menu">
-                            <li>
-                                <a href="{{ url('report/listhighestprice') }}">
-                                    <i class="fa fa-user-md"></i>
-                                    Report Highest Price
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-h-square"></i>
-                                    Report Medicine By Category
-                                </a>
-                            </li>
+                           <li>
+                              <a href="{{ url('report/listhighestprice') }}">
+                                 <i class="fa fa-user-md"></i>
+                                 Report Highest Price
+                              </a>
+                           </li>
                         </ul>
                     </li>
                 </ul>

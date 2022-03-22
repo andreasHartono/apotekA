@@ -25,6 +25,7 @@ Route::resource('medicines', 'MedicineController');
 Route::resource('categories', 'CategoryController');
 Route::get('coba1', 'MedicineController@coba1');
 Route::get('coba2', 'MedicineController@coba2');
+Route::post('/medicines/showInfo', 'MedicineController@showInfo')->name('medicines.showInfo');
 Route::get('showgrid', 'MedicineController@showgrid');
-Route::get('report/listmedicine/{id}', 'CategoryController@showlist')->name('reportShowMedicine');
+Route::get('report/listmedicine/{id}', 'CategoryController@showlist');
 Route::get('report/listhighestprice', 'MedicineController@showlisthighestprice');

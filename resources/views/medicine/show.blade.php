@@ -1,5 +1,4 @@
-@extends('layout.conquer2')
-@section('content')
+
    <div class="portlet">
       <div class="portlet-title">
          <div class="caption">
@@ -43,6 +42,8 @@
                </tbody>
             </table>
          </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
       </div>
    </div>
-@endsection
