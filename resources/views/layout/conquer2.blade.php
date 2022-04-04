@@ -19,7 +19,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <head>
     <meta charset="utf-8" />
-    <title>Kimia Farma</title>
+    <title>KEMENKES</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="description" />
@@ -79,39 +79,19 @@ License: You must have a valid license purchased only from themeforest(the above
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                         data-close-others="true">
                         <i class="icon-bell"></i>
-                        <span class="badge badge-success">
-                            6 </span>
+                        <span class="badge badge-success">1</span>
                     </a>
                     <ul class="dropdown-menu extended notification">
                         <li>
-                            <p>
-                                You have 2 new notifications
-                            </p>
-                        </li>
-                        <li>
-                            <ul class="dropdown-menu-list scroller" style="height: 250px;">
-                                <li>
-                                    <a href="#">
-                                        <span class="label label-sm label-icon label-info">
-                                            <i class="fa fa-bullhorn"></i>
-                                        </span>
-                                        System Error. <span class="time">
-                                            55 mins </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="label label-sm label-icon label-danger">
-                                            <i class="fa fa-bolt"></i>
-                                        </span>
-                                        Database overloaded 68%. <span class="time">
-                                            2 hrs </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="external">
-                            <a href="#">See all notifications <i class="fa fa-angle-right"></i></a>
+                           <ul class="dropdown-menu-list scroller" style="height: 250px;">
+                              <li>
+                                 <a href="#">
+                                    <span class="label label-sm label-icon label-info">
+                                       <i class="fa fa-bullhorn"></i>
+                                    </span>System Error.<span class="time">55 mins </span>
+                                 </a>
+                              </li>
+                           </ul>
                         </li>
                     </ul>
                 </li>
@@ -121,52 +101,25 @@ License: You must have a valid license purchased only from themeforest(the above
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                         data-close-others="true">
                         <i class="icon-envelope-open"></i>
-                        <span class="badge badge-info">
-                            5 </span>
+                        <span class="badge badge-info">1</span>
                     </a>
                     <ul class="dropdown-menu extended inbox">
                         <li>
-                            <p>
-                                You have 3 new messages
-                            </p>
-                        </li>
-                        <li>
-                            <ul class="dropdown-menu-list scroller" style="height: 250px;">
-                                <li>
-                                    <a href="inbox.html?a=view">
-                                        <span class="photo">
-                                            <img src="{{ asset('assets/img/avatar2.jpg') }}" alt="" />
-                                        </span>
-                                        <span class="subject">
-                                            <span class="from">
-                                                Lisa Wong </span>
-                                            <span class="time">
-                                                40 mins </span>
-                                        </span>
-                                        <span class="message">
-                                            Vivamus sed auctor 40% nibh congue nibh... </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="inbox.html?a=view">
-                                        <span class="photo">
-                                            <img src="{{ asset('assets/img/avatar3.jpg') }}" alt="" />
-                                        </span>
-                                        <span class="subject">
-                                            <span class="from">
-                                                Richard Doe </span>
-                                            <span class="time">
-                                                46 mins </span>
-                                        </span>
-                                        <span class="message">
-                                            Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh...
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="external">
-                            <a href="inbox.html">See all messages <i class="fa fa-angle-right"></i></a>
+                           <ul class="dropdown-menu-list scroller" style="height: 250px;">
+                              
+                              <li>
+                                 <a href="inbox.html?a=view">
+                                    <span class="photo">
+                                       <img src="{{ asset('assets/img/avatar3.jpg') }}" alt="" />
+                                    </span>
+                                    <span class="subject">
+                                       <span class="from">Richard Doe</span>
+                                       <span class="time">46 mins</span>
+                                    </span>
+                                    <span class="message">Viva</span>
+                                 </a>
+                              </li>
+                           </ul>
                         </li>
                     </ul>
                 </li>
@@ -176,55 +129,26 @@ License: You must have a valid license purchased only from themeforest(the above
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                         data-close-others="true">
                         <i class="icon-calendar"></i>
-                        <span class="badge badge-warning">
-                            5 </span>
+                        <span class="badge badge-warning">1</span>
                     </a>
                     <ul class="dropdown-menu extended tasks">
                         <li>
-                            <p>
-                                You have 3 pending tasks
-                            </p>
-                        </li>
-                        <li>
-                            <ul class="dropdown-menu-list scroller" style="height: 250px;">
-                                <li>
-                                    <a href="#">
-                                        <span class="task">
-                                            <span class="desc">
-                                                Web server upgrade </span>
-                                            <span class="percent">
-                                                58% </span>
-                                        </span>
-                                        <span class="progress progress-striped">
-                                            <span style="width: 58%;" class="progress-bar progress-bar-info"
-                                                aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
-                                                <span class="sr-only">
-                                                    58% Complete </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="task">
-                                            <span class="desc">
-                                                Mobile development </span>
-                                            <span class="percent">
-                                                85% </span>
-                                        </span>
-                                        <span class="progress progress-striped">
-                                            <span style="width: 85%;" class="progress-bar progress-bar-success"
-                                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                                <span class="sr-only">
-                                                    85% Complete </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="external">
-                            <a href="#">See all tasks <i class="fa fa-angle-right"></i></a>
+                           <ul class="dropdown-menu-list scroller" style="height: 250px;">
+                              <li>
+                                 <a href="#">
+                                    <span class="task">
+                                       <span class="desc">Web server upgrade</span>
+                                       <span class="percent">58%</span>
+                                    </span>
+                                    <span class="progress progress-striped">
+                                       <span style="width: 58%;" class="progress-bar progress-bar-info"
+                                          aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
+                                          <span class="sr-only">58% Complete</span>
+                                       </span>
+                                    </span>
+                                 </a>
+                              </li>
+                           </ul>
                         </li>
                     </ul>
                 </li>
@@ -235,16 +159,15 @@ License: You must have a valid license purchased only from themeforest(the above
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                         data-close-others="true">
                         <img alt="" src="{{ asset('assets/img/avatar3_small.jpg') }}" />
-                        <span class="username">
-                            Nick </span>
+                        <span class="username">Nick</span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="extra_profile.html"><i class="fa fa-user"></i> My Profile</a>
+                           <a href="#profile"><i class="fa fa-user"></i>My Profile</a>
                         </li>
                         <li>
-                            <a href="login.html"><i class="fa fa-key"></i> Log Out</a>
+                           <a href="#login"><i class="fa fa-key"></i>Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -265,10 +188,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 <ul class="page-sidebar-menu">
                     <li class="sidebar-toggler-wrapper">
                         <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                        <div class="sidebar-toggler">
-                        </div>
-                        <div class="clearfix">
-                        </div>
+                        <div class="sidebar-toggler"></div>
+                        <div class="clearfix"></div>
                         <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                     </li>
                     <li class="sidebar-search-wrapper">
@@ -281,35 +202,35 @@ License: You must have a valid license purchased only from themeforest(the above
                     </li>
                     <li class="start ">
                         <a href="{{ url('/') }}">
-                            <i class="icon-home"></i>
-                            <span class="title">Dashboard</span>
+                           <i class="icon-home"></i>
+                           <span class="title">Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;">
-                            <i class="icon-puzzle"></i>
-                            <span class="title">Master Page</span>
-                            <span class="arrow "></span>
+                           <i class="icon-puzzle"></i>
+                           <span class="title">Master Page</span>
+                           <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu">
-                            <li>
-                                <a href="{{ url('/categories') }}">
-                                    <i class="fa fa-bookmark"></i>
-                                    Master Category
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/medicines') }}">
-                                    <i class="fa fa-medkit"></i>
-                                    Master Medicines
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/showgrid') }}">
-                                    <i class="fa fa-stethoscope"></i>
-                                    Master Medicines By Grid
-                                </a>
-                            </li>
+                           <li>
+                              <a href="{{ url('/categories') }}">
+                                 <i class="fa fa-bookmark"></i>
+                                 Master Category
+                              </a>
+                           </li>
+                           <li>
+                              <a href="{{ url('/medicines') }}">
+                                 <i class="fa fa-medkit"></i>
+                                 Master Medicines
+                              </a>
+                           </li>
+                           <li>
+                              <a href="{{ url('/showgrid') }}">
+                                 <i class="fa fa-stethoscope"></i>
+                                 Master Medicines Bentuk Grid
+                              </a>
+                           </li>
                         </ul>
                     </li>
                     <li class="active ">
@@ -380,5 +301,4 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
-
 </html>

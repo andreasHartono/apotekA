@@ -58,10 +58,10 @@ class MedicineController extends Controller
     * @param  \App\Medicine  $medicine
     * @return \Illuminate\Http\Response
     */
-   public function show(Medicine $medicine)
+   public function show($id_medicine)
    {
-      $data = $medicine;
-      return view('medicine.show', compact('data'));
+      $data = Medicine::find($id_medicine);
+      return view('medicine.index', compact('data'));
    }
 
    /**

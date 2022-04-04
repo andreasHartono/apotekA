@@ -7,7 +7,7 @@
       <ul class="page-breadcrumb">
          <li>
             <i class="fa fa-home"></i>
-            <a href="index.html">Home</a>
+            <a href="#">Dashboard</a>
             <i class="fa fa-angle-right"></i>
          </li>
          <li>
@@ -43,9 +43,9 @@
                         @endforeach
                      </td>
                      <td>
-                         <a class='btn btn-xs btn-info' data-toggle='modal' data-target='#myModal'
+                         <a class='btn btn-success' data-toggle='modal' data-target='#myModal'
                         onclick='showProducts({{ $d->id }})'>
-                           Show Medicines
+                           Show Products
                         </a>
                      </td>
                   </tr>
@@ -83,5 +83,4 @@
       });
    }
 </script>
-
 @endsection

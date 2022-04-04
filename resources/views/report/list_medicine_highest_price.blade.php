@@ -11,7 +11,7 @@
       </div>
       <div class="portlet-body">
          <div class="table-responsive">
-            <table class="table table-striped table-responsive">
+            <table class="table table-striped table-bordered table-hover table-responsive">
                <thead>
                   <tr>
                     <th>Data</th>
