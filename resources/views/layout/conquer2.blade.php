@@ -19,7 +19,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <head>
     <meta charset="utf-8" />
-    <title>KEMENKES</title>
+    <title>APOTIK A</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="description" />
@@ -53,12 +53,12 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <body class="page-header-fixed">
     <!-- BEGIN HEADER -->
-    <div class="header navbar  navbar-fixed-top">
+    <div class="header navbar navbar-expand-lg navbar-fixed-top">
         <!-- BEGIN TOP NAVIGATION BAR -->
         <div class="header-inner">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('assets/img/logo.png') }}" alt="logo" /></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('assets/images/kimia-farma-logo.jpg') }}" alt="logo" /></a>
             </div>
             <form class="search-form search-form-header" role="form" action="{{ url('/') }}">
                 <div class="input-icon right">
@@ -209,26 +209,32 @@ License: You must have a valid license purchased only from themeforest(the above
                     <li>
                         <a href="javascript:;">
                            <i class="icon-puzzle"></i>
-                           <span class="title">Master Page</span>
+                           <span class="title">Page</span>
                            <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu">
                            <li>
                               <a href="{{ url('/categories') }}">
                                  <i class="fa fa-bookmark"></i>
-                                 Master Category
+                                 Category
                               </a>
                            </li>
                            <li>
                               <a href="{{ url('/medicines') }}">
                                  <i class="fa fa-medkit"></i>
-                                 Master Medicines
+                                 Medicines
                               </a>
                            </li>
                            <li>
                               <a href="{{ url('/showgrid') }}">
                                  <i class="fa fa-stethoscope"></i>
-                                 Master Medicines Bentuk Grid
+                                 Medicines Bentuk Grid
+                              </a>
+                           </li>
+                           <li>
+                              <a href="{{ route('transactions.index') }}">
+                                 <i class="fa fa-stethoscope"></i>
+                                 Transaction
                               </a>
                            </li>
                         </ul>

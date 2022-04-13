@@ -29,3 +29,5 @@ Route::post('/medicines/showInfo', 'MedicineController@showInfo')->name('medicin
 Route::get('showgrid', 'MedicineController@showgrid');
 Route::get('report/listmedicine/{id}', 'CategoryController@showlist');
 Route::get('report/listhighestprice', 'MedicineController@showlisthighestprice');
+Route::resource('transactions', 'TransactionController');
+Route::post('transactions/showDataAjax', 'TransactionController@showajax')->name('transaction.showAjax');
