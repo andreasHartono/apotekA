@@ -237,6 +237,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                  Transaction
                               </a>
                            </li>
+                           <li>
+                              <a href="{{ url('/suppliers') }}">
+                                 <i class="fa fa-stethoscope"></i>
+                                 Supplier
+                              </a>
+                           </li>
                         </ul>
                     </li>
                     <li class="active ">

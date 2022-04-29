@@ -43,7 +43,7 @@
                         @endforeach
                      </td>
                      <td>
-                         <a class='btn btn-success' data-toggle='modal' data-target='#myModal'
+                         <a class='btn btn-info' data-toggle='modal' data-target='#myModal'
                         onclick='showProducts({{ $d->id }})'>
                            Show Products
                         </a>
