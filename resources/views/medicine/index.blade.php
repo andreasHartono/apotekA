@@ -24,6 +24,7 @@
          <div class="caption"><b>Daftar semua obat</b></div>
       </div>
       <div class="portlet-body">
+         <a class='btn btn-info' href="{{ route('medicines.create') }}">Tambah Medicine</a>
          <div class="table-responsive">
             <table class="table table-striped table-responsive">
                <thead>

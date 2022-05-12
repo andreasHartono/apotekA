@@ -38,7 +38,8 @@ class MedicineController extends Controller
     */
    public function create()
    {
-      //
+      $categories = Category::all();
+      return view('medicine.create',compact('categories'));
    }
 
    /**
@@ -49,7 +50,18 @@ class MedicineController extends Controller
     */
    public function store(Request $request)
    {
-      //
+      $data = new Medicine();
+      $data->generic_name = $request->get('name');
+      $data->form = $request->get('form');
+      $data->restriction_formula = $request->get('restriction_formula');
+      $data->price = $request->get('price');
+      $data->description = $request->get('description');
+      $data->category_id = $request->get('category');
+      $data->faskes1 = $request->get('faskes1');
+      $data->faskes2 = $request->get('faskes2');
+      $data->faskes3 = $request->get('faskes3');
+      $data->image = $request->get('name').'jpg';
+      dd($data);
    }
 
    /**
