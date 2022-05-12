@@ -15,14 +15,17 @@
             <i class="fa fa-angle-right"></i>
          </li>
       </ul>
-      <div class="page-toolbar">
-         <!-- tempat action button -->
-      </div>
    </div>
-   <div class="col-md-12">
+   <div class="col-md-13">
       @if(session('status'))
          <div class="alert alert-success">
             {{ session('status') }}
+         </div>
+      @endif
+
+      @if(session('error'))
+         <div class="alert alert-danger">
+            {{ session('error') }}
          </div>
       @endif
    </div>
@@ -33,7 +36,7 @@
       <div class="portlet-body">
          <a class='btn btn-info' href="{{ route('suppliers.create') }}">Tambah Supplier</a>
           <div class="table-responsive">
-            <table class="table table-striped table-responsive">
+            <table class="table table-striped table-hover table-responsive">
                <thead>
                   <tr>
                      <th>Nama</th>
@@ -46,10 +49,16 @@
                   <tr>
                      <td>{{ $d->name }}</td>
                      <td>{{ $d->address }}</td>
-                     <td>
-                        <a class='btn btn-warning' href="#">Ubah</a>
-                        <a class='btn btn-danger' href="#">Hapus</a>
-                     </td>
+                     <th>
+                        <a class="btn btn-warning btn-xs" href="{{ url('suppliers/'.$d->id.'/edit') }}">Ubah</a>
+                        <form method="POST" action="{{ url('suppliers/'.$d->id) }}" >
+                           @csrf
+                           @method('DELETE')
+                           <input type='submit' value='Hapus'class='btn btn-danger btn-xs'
+                           onclick="if(!confirm('apakah anda yakin menghapus data {{ $d->name }}')) return false;" 
+                           />
+                        </form>
+                     </th>
                   </tr>
                   @endforeach
                </tbody>

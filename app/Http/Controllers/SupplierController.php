@@ -26,8 +26,8 @@ class SupplierController extends Controller
     */
    public function create()
    {
-      $categories=Category::all();
-      return view('supplier.create',compact('categories'));
+      $categories = Category::all();
+      return view('supplier.create', compact('categories'));
    }
 
    /**
@@ -38,11 +38,11 @@ class SupplierController extends Controller
     */
    public function store(Request $request)
    {
-      $data=new Supplier();
-      $data->name=$request->get('name');
-      $data->address=$request->get('address');
+      $data = new Supplier();
+      $data->name = $request->get('name');
+      $data->address = $request->get('address');
       $data->save();
-      return redirect()->route('suppliers.index')->with('status','Data Supplier Berhasil ditambah');
+      return redirect()->route('suppliers.index')->with('status', 'Data Supplier Berhasil ditambah');
    }
 
    /**
@@ -64,7 +64,8 @@ class SupplierController extends Controller
     */
    public function edit(Supplier $supplier)
    {
-      //
+      $data = $supplier;
+      return view('supplier.edit', compact('data'));
    }
 
    /**
@@ -76,7 +77,14 @@ class SupplierController extends Controller
     */
    public function update(Request $request, Supplier $supplier)
    {
-      //
+      //dd($request);
+      $supplier->name = $request->get('name');
+      $supplier->address = $request->get('address');
+      $supplier->save();
+      return redirect()->route('suppliers.index')->with(
+         'status',
+         'data berhasil diubah'
+      );
    }
 
    /**
@@ -87,6 +95,14 @@ class SupplierController extends Controller
     */
    public function destroy(Supplier $supplier)
    {
-      //
+      //dd($supplier);
+      try {
+         $supplier->delete();
+         return redirect()->route('suppliers.index')
+            ->with('status', 'data berhasil dihapus');
+      } catch (\PDOException $e) {
+         return redirect()->route('suppliers.index')
+         ->with('error', 'Data Gagal dihapus. Pastikan data child tidak berhubungan');
+      }
    }
 }
