@@ -57,11 +57,12 @@ class MedicineController extends Controller
       $data->price = $request->get('price');
       $data->description = $request->get('description');
       $data->category_id = $request->get('category');
-      $data->faskes1 = $request->get('faskes1');
-      $data->faskes2 = $request->get('faskes2');
-      $data->faskes3 = $request->get('faskes3');
+      $data->faskes1 = 0;
+      $data->faskes2 = 1;
+      $data->faskes3 = 2;
       $data->image = $request->get('name').'jpg';
-      dd($data);
+      $data->save();
+      return redirect()->route('medicines.index')->with('status','data medicines berhasil di tambah');
    }
 
    /**
@@ -84,7 +85,9 @@ class MedicineController extends Controller
     */
    public function edit(Medicine $medicine)
    {
-      //
+      $data = $medicine;
+      $categories = Category::all();
+      return view('medicine.edit', compact('data','categories'));
    }
 
    /**
@@ -96,7 +99,20 @@ class MedicineController extends Controller
     */
    public function update(Request $request, Medicine $medicine)
    {
-      //
+      $data = new Medicine();
+      $data->generic_name = $request->get('name');
+      $data->form = $request->get('form');
+      $data->restriction_formula = $request->get('restriction_formula');
+      $data->price = $request->get('price');
+      $data->description = $request->get('description');
+      $data->category_id = $request->get('category');
+      $data->faskes1 = 0;
+      $data->faskes2 = 1;
+      $data->faskes3 = 2;
+      $data->image = $request->get('name') . 'jpg';
+      $data->save();
+      return redirect()->route('medicines.index')->with('status', 'data medicines berhasil di ubah');
+
    }
 
    /**
@@ -107,7 +123,14 @@ class MedicineController extends Controller
     */
    public function destroy(Medicine $medicine)
    {
-      //
+      try {
+         $medicine->delete();
+         return redirect()->route('medicines.index')
+         ->with('status', 'data berhasil dihapus');
+      } catch (\PDOException $e) {
+         return redirect()->route('medicines.index')
+         ->with('error', 'Data Gagal dihapus. Pastikan data child tidak berhubungan');
+      }
    }
 
    public function coba1()

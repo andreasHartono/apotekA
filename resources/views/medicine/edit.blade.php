@@ -15,7 +15,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Form Tambah Medicine</a>
+                <a href="#">Form Ubah Medicine</a>
                 <i class="fa fa-angle-right"></i>
             </li>
         </ul>
@@ -25,45 +25,47 @@
             <div class="portlet">
                 <div class="portlet-title">
                     <div class="caption">
-                        <b>TAMBAH DATA MEDICINE</b>
+                        <b>UBAH DATA MEDICINE</b>
                     </div>
                 </div>
                 <div class="portlet-body form">
                     <form role="form" method="POST" id="form_sample_3" novalidate="novalidate"
-                        action="{{ route('medicines.store') }}" class="form-horizontal">
+                        action="{{ url('medicines/'.$data->id) }}" class="form-horizontal">
                         @csrf
+                        @method('PUT')
                         <div class="form-body">
                             <div class="form-group">
                                 <label class="control-label col-md-3">Nama</label>
                                 <div class="col-md-8">
                                     <input type="text" name="name" class="form-control" placeholder="asam blabla"
-                                        required>
+                                       value="{{ $data->generic_name }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Form</label>
                                 <div class="col-md-8">
-                                    <input type="text" name="form" class="form-control" placeholder="kaps 10 mg" required>
+                                    <input type="text" name="form" class="form-control" placeholder="kaps 10 mg" 
+                                    value="{{ $data->form }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Formula</label>
                                 <div class="col-md-8">
                                     <input type="text" name="restriction_formula" class="form-control"
-                                        placeholder="10kaps/minggu" required>
+                                        placeholder="10kaps/minggu" value="{{ $data->restriction_formula }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Price</label>
                                 <div class="col-md-8">
                                     <input type="number" name="price" class="form-control" placeholder="10000.00"
-                                        required>
+                                       value="{{ $data->price }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Description</label>
                                 <div class="col-md-8">
-                                    <textarea name="description" class="form-control" rows="2"></textarea>
+                                    <textarea name="description" class="form-control" rows="2">{{ $data->description }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -83,7 +85,7 @@
                                         <label>
                                             <div class="checker">
                                                 <span>
-                                                    <input type="checkbox" name="faskes1" value="0" />
+                                                    <input type="checkbox" name="faskes1" value="{{ $data->faskes1 }}" />
                                                 </span>
                                             </div>
                                              Faskes 1
@@ -91,7 +93,7 @@
                                         <label>
                                             <div class="checker">
                                                 <span>
-                                                    <input type="checkbox" name="faskes2" value="0" />
+                                                    <input type="checkbox" name="faskes2" value="{{ $data->faskes2 }}" />
                                                 </span>
                                             </div>
                                             Faskes 2
@@ -99,7 +101,7 @@
                                         <label>
                                             <div class="checker">
                                                 <span>
-                                                    <input type="checkbox" name="faskes3" value="0" />
+                                                    <input type="checkbox" name="faskes3" value="{{ $data->faskes3 }}" />
                                                 </span>
                                             </div>
                                             Faskes 3
