@@ -70,6 +70,14 @@
                            data-target="#show{{$d->id}}">
                            Detail
                         </a>
+                        <a class="btn btn-warning btn-xs" href="{{ url('medicines/'.$d->id.'/edit') }}">Ubah</a>
+                        <form method="POST" action="{{ url('medicines/'.$d->id) }}" >
+                           @csrf
+                           @method('DELETE')
+                           <input type='submit' value='Hapus'class='btn btn-danger btn-xs'
+                           onclick="if(!confirm('apakah anda yakin menghapus data {{ $d->generic_name }}')) return false;" 
+                           />
+                        </form>
                         <div class="modal fade" id="show{{$d->id}}" tabindex="-1" role="basic" aria-hidden="true">
                            <div class="modal-dialog">
                               <div class="modal-content">
