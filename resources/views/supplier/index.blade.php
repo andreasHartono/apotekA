@@ -34,8 +34,8 @@
             <div class="caption"><b>DAFTAR SUPPLIER</b></div>
         </div>
         <div class="portlet-body">
-            <a class='btn btn-info' href="{{ route('suppliers.create') }}">Tambah Supplier</a>
-            <a class='btn btn-info' href="#modalCreate" data-toggle="modal">Tambah Supplier (Modal)</a>
+            <a class='btn btn-info btn-sm' href="{{ route('suppliers.create') }}">Tambah Supplier</a>
+            <a class='btn btn-info btn-sm' href="#modalCreate" data-toggle="modal">Tambah Supplier (Modal)</a>
             <div class="table-responsive">
                 <table class="table table-striped table-hover table-responsive">
                     <thead>
@@ -118,7 +118,7 @@
 
    <div class="modal fade" id="modalEdit" tabindex="-1" role="basic" aria-hidden="true">
       <div class="modal-dialog">
-         <div class="modal-content" >
+         <div class="modal-content">
          </div>
       </div>
    </div>
@@ -134,7 +134,7 @@
                     'id': id
                 },
                 success: function(data) {
-                    $("#modalContent").html(data.msg)
+                    $("#modalContent").html(data.msg);
                 }
             });
         }
@@ -148,7 +148,7 @@
                     'id': id
                 },
                 success: function(data) {
-                    $("#modalContent").html(data.msg)
+                    $("#modalContent").html(data.msg);
                 }
             });
         }
@@ -188,7 +188,7 @@
                         alert(data.msg)
                         $('#td_' + id).remove();
                     } else {
-                        alert(data.msg)
+                        alert(data.msg);
                     }
                 }
             });
