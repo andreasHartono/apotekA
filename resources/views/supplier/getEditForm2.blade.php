@@ -1,5 +1,6 @@
 <form role="form" method="POST" action="{{ url('suppliers/'.$data->id) }}" class="form-horizontal">
     @csrf
+    @method('PUT')
     <div class="modal-header">
         <button type="button" class="close"
           data-dismiss="modal" aria-hidden="true"></button>
