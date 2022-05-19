@@ -60,12 +60,6 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="page-logo">
                 <a href="{{ url('/') }}"><img src="{{ asset('assets/images/kimia-farma-logo.jpg') }}" alt="logo" /></a>
             </div>
-            <form class="search-form search-form-header" role="form" action="{{ url('/') }}">
-                <div class="input-icon right">
-                    <i class="icon-magnifier"></i>
-                    <input type="text" class="form-control input-sm" name="query" placeholder="Search...">
-                </div>
-            </form>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
             <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -74,86 +68,6 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN TOP NAVIGATION MENU -->
             <ul class="nav navbar-nav pull-right">
-                <!-- BEGIN NOTIFICATION DROPDOWN -->
-                <li class="dropdown" id="header_notification_bar">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                        data-close-others="true">
-                        <i class="icon-bell"></i>
-                        <span class="badge badge-success">1</span>
-                    </a>
-                    <ul class="dropdown-menu extended notification">
-                        <li>
-                           <ul class="dropdown-menu-list scroller" style="height: 250px;">
-                              <li>
-                                 <a href="#">
-                                    <span class="label label-sm label-icon label-info">
-                                       <i class="fa fa-bullhorn"></i>
-                                    </span>System Error.<span class="time">55 mins </span>
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                    </ul>
-                </li>
-                <!-- END NOTIFICATION DROPDOWN -->
-                <!-- BEGIN INBOX DROPDOWN -->
-                <li class="dropdown" id="header_inbox_bar">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                        data-close-others="true">
-                        <i class="icon-envelope-open"></i>
-                        <span class="badge badge-info">1</span>
-                    </a>
-                    <ul class="dropdown-menu extended inbox">
-                        <li>
-                           <ul class="dropdown-menu-list scroller" style="height: 250px;">
-                              
-                              <li>
-                                 <a href="inbox.html?a=view">
-                                    <span class="photo">
-                                       <img src="{{ asset('assets/img/avatar3.jpg') }}" alt="" />
-                                    </span>
-                                    <span class="subject">
-                                       <span class="from">Richard Doe</span>
-                                       <span class="time">46 mins</span>
-                                    </span>
-                                    <span class="message">Viva</span>
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                    </ul>
-                </li>
-                <!-- END INBOX DROPDOWN -->
-                <!-- BEGIN TODO DROPDOWN -->
-                <li class="dropdown" id="header_task_bar">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                        data-close-others="true">
-                        <i class="icon-calendar"></i>
-                        <span class="badge badge-warning">1</span>
-                    </a>
-                    <ul class="dropdown-menu extended tasks">
-                        <li>
-                           <ul class="dropdown-menu-list scroller" style="height: 250px;">
-                              <li>
-                                 <a href="#">
-                                    <span class="task">
-                                       <span class="desc">Web server upgrade</span>
-                                       <span class="percent">58%</span>
-                                    </span>
-                                    <span class="progress progress-striped">
-                                       <span style="width: 58%;" class="progress-bar progress-bar-info"
-                                          aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
-                                          <span class="sr-only">58% Complete</span>
-                                       </span>
-                                    </span>
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                    </ul>
-                </li>
-                <!-- END TODO DROPDOWN -->
-                <li class="devider">&nbsp;</li>
                 <!-- BEGIN USER LOGIN DROPDOWN -->
                 <li class="dropdown user">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
