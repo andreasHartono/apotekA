@@ -81,47 +81,45 @@
             </div>
         </div>
     </div>
-   <div class="modal fade" id="modalCreate" tabindex="-1" role="basic" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content" >
-            <form role="form" method="POST" action="{{url('suppliers')}}" >
-               @csrf
-               <div class="modal-header">
-                  <button type="button" class="close" 
-                     data-dismiss="modal" aria-hidden="true"></button>
-                  <h4 class="modal-title">Add New Supplier</h4>
-               </div>
-               <div class="modal-body">
-                  <div class="form-body">
-                     <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
-                        <input type="text" class="form-control" 
-                        name="name" placeholder="isikan nama supplier">
-                        <span class="help-block">
-                        *tulis nama lengkap perusahaan </span>
-                     </div>
-                     <div class="form-group">
-                        <label>Address</label>
-                        <textarea name="address"
-                        class="form-control" rows="3"></textarea>
-                     </div>
-                  </div>
-               </div>
-               <div class="modal-footer">
-                  <button type="submit" class="btn btn-info">Submit</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
+    <div class="modal fade" id="modalCreate" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form role="form" method="POST" action="{{ url('suppliers') }}">
+                    @csrf
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Add New Supplier</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" class="form-control" name="name" placeholder="isikan nama supplier">
+                                <span class="help-block">
+                                    *tulis nama lengkap perusahaan </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea name="address" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-   <div class="modal fade" id="modalEdit" tabindex="-1" role="basic" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-         </div>
-      </div>
-   </div>
+    <div class="modal fade" id="modalEdit" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalContent">
+               
+            </div>
+        </div>
+    </div>
 @endsection
 @section('javascript')
     <script>
@@ -134,7 +132,13 @@
                     'id': id
                 },
                 success: function(data) {
+                    //alert("test");
+                    console.log('berhasil');
                     $("#modalContent").html(data.msg);
+                },
+                error: function(data) {
+                   console.log('error');
+                    alert(data);
                 }
             });
         }

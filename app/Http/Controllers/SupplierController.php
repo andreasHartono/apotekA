@@ -102,7 +102,7 @@ class SupplierController extends Controller
             ->with('status', 'data berhasil dihapus');
       } catch (\PDOException $e) {
          return redirect()->route('suppliers.index')
-         ->with('error', 'Data Gagal dihapus. Pastikan data child tidak berhubungan');
+            ->with('error', 'Data Gagal dihapus. Pastikan data child tidak berhubungan');
       }
    }
 
@@ -112,31 +112,33 @@ class SupplierController extends Controller
     * @param  \App\Supplier  $supplier
     * @return \Illuminate\Http\Response
     */
-    public function getEditForm(Request $request)
-    {
-       $id=$request->get('id');
-       $data=Supplier::find($id);
-       return response()->json(array(
-           'status' => 'oke',
-           'msg' => view('supplier.getEditForm',compact('data'))->render()
-       ),200);
-    }
+   public function getEditForm(Request $request)
+   {
+      $id = $request->get('id');
+      $data = Supplier::find($id);
+      // dd($data);
+      return response()->json(array(
+         'status' => 'oke',
+         'msg' => view('supplier.getEditForm', compact('data'))->render()
+      ), 200);
+   }
+
    /**
     * Show the form for editing the specified resource.
     *
     * @param  \App\Supplier  $supplier
     * @return \Illuminate\Http\Response
     */
-    public function getEditForm2(Request $request)
-    {
-       $id=$request->get('id');
-       $data=Supplier::find($id);
-       return response()->json(array(
-           'status' => 'oke',
-           'msg' => view('supplier.getEditForm2',compact('data'))->render()
-       ),200);
-    }
-    /* Update the specified resource in storage.
+   public function getEditForm2(Request $request)
+   {
+      $id = $request->get('id');
+      $data = Supplier::find($id);
+      return response()->json(array(
+         'status' => 'oke',
+         'msg' => view('supplier.getEditForm2', compact('data'))->render()
+      ), 200);
+   }
+   /* Update the specified resource in storage.
     *
     * @param  \Illuminate\Http\Request  $request
     * @param  \App\Supplier  $supplier
@@ -145,17 +147,17 @@ class SupplierController extends Controller
    public function saveData(Request $request)
    {
       //dd($request);
-      $id=$request->get('id');
-      $supplier=Supplier::find($id);
+      $id = $request->get('id');
+      $supplier = Supplier::find($id);
       $supplier->name = $request->get('name');
       $supplier->address = $request->get('address');
       $supplier->save();
       return redirect()->json(array(
-          'status'=>'ok',
-          'msg'=>'Supplier data updated'
-      ),200);
+         'status' => 'ok',
+         'msg' => 'Supplier data updated'
+      ), 200);
    }
-    /* Update the specified resource in storage.
+   /* Update the specified resource in storage.
     *
     * @param  \Illuminate\Http\Request  $request
     * @param  \App\Supplier  $supplier
@@ -163,23 +165,21 @@ class SupplierController extends Controller
     */
    public function deleteData(Request $request)
    {
-       try
-       {
-            $id=$request->get('id');
-            $supplier=Supplier::find($id);
-            $supplier->delete();
-            return redirect()->json(array(
-                'status'=>'ok',
-                'msg'=>'Supplier data deleted'
-            ),200);
-       } catch(\PDOException $e) {
-            return redirect()->json(array(
-                'status'=>'error',
-                'msg'=>'Data Gagal dihapus. Pastikan data supplier tidak digunakan di data medicine'
-            ),200);
-       }
+      try {
+         $id = $request->get('id');
+         $supplier = Supplier::find($id);
+         $supplier->delete();
+         return redirect()->json(array(
+            'status' => 'ok',
+            'msg' => 'Supplier data deleted'
+         ), 200);
+      } catch (\PDOException $e) {
+         return redirect()->json(array(
+            'status' => 'error',
+            'msg' => 'Data Gagal dihapus. Pastikan data supplier tidak digunakan di data medicine'
+         ), 200);
+      }
       //dd($request);
 
    }
-
 }

@@ -32,7 +32,8 @@ Route::get('report/listhighestprice', 'MedicineController@showlisthighestprice')
 Route::resource('transactions', 'TransactionController');
 Route::post('transactions/showDataAjax', 'TransactionController@showajax')->name('transaction.showAjax');
 Route::resource('suppliers', 'SupplierController');
-Route::post('/supplier/getEditForm','SupplierController@getEditForm')->name('supplier.getEditForm');
-Route::post('/supplier/getEditForm2','SupplierController@getEditForm2')->name('supplier.getEditForm2');
-Route::post('/supplier/saveData','SupplierController@saveData')->name('supplier.saveData');
-Route::post('/supplier/deleteData','SupplierController@deleteData')->name('supplier.deleteData');
+Route::post('/suppliers/getEditForm','SupplierController@getEditForm')->name('supplier.getEditForm');
+Route::post('/suppliers/getEditForm2','SupplierController@getEditForm2')->name('supplier.getEditForm2');
+Route::post('/suppliers/saveData','SupplierController@saveData')->name('supplier.saveData');
+Route::post('/suppliers/deleteData','SupplierController@deleteData')->name('supplier.deleteData');
+//Route::get('supplier/getEditForm','SupplierController@getEditForm3')->name('supplier.getEditForm');
