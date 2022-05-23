@@ -70,14 +70,11 @@ License: You must have a valid license purchased only from themeforest(the above
             <ul class="nav navbar-nav pull-right">
                 <!-- BEGIN USER LOGIN DROPDOWN -->
                 <li class="dropdown user">
+                  @if (Auth::user())
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                         data-close-others="true">
                         <img alt="" src="{{ asset('assets/img/avatar3_small.jpg') }}" />
-                        <span class="username username-hide-on-mobile">
-                            @if (Auth::user())
-                                {{ Auth::user()->name }}
-                            @endif
-                        </span>
+                        <span class="username username-hide-on-mobile">{{ Auth::user()->name }}</span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
@@ -88,9 +85,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <i class="fa fa-key"></i><input class="btn btn-default" type="submit"
                                     value="Logout" />
                             </form>
-
                         </li>
                     </ul>
+                  @endif
                 </li>
                 <!-- END USER LOGIN DROPDOWN -->
             </ul>
