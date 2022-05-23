@@ -87,6 +87,13 @@ License: You must have a valid license purchased only from themeforest(the above
                             </form>
                         </li>
                     </ul>
+                  @else
+                     <li class="nav-item">
+                        <a class="btn" href="{{ route('login') }}">{{ __('Login') }}</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="btn" href="{{ route('register') }}">{{ __('Register') }}</a>
+                     </li>
                   @endif
                 </li>
                 <!-- END USER LOGIN DROPDOWN -->
