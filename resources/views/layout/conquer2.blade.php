@@ -45,7 +45,6 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" type="text/css" />
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
-
     @yield('javascript')
 </head>
 <!-- END HEAD -->
@@ -58,7 +57,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="header-inner">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('assets/images/kimia-farma-logo.jpg') }}" alt="logo" /></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('assets/images/kimia-farma-logo.jpg') }}"
+                        alt="logo" /></a>
             </div>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -73,15 +73,22 @@ License: You must have a valid license purchased only from themeforest(the above
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                         data-close-others="true">
                         <img alt="" src="{{ asset('assets/img/avatar3_small.jpg') }}" />
-                        <span class="username">Nick</span>
+                        <span class="username username-hide-on-mobile">
+                            @if (Auth::user())
+                                {{ Auth::user()->name }}
+                            @endif
+                        </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                           <a href="#profile"><i class="fa fa-user"></i>My Profile</a>
-                        </li>
-                        <li>
-                           <a href="#login"><i class="fa fa-key"></i>Log Out</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                class="d-done">
+                                @csrf
+                                <i class="fa fa-key"></i><input class="btn btn-default" type="submit"
+                                    value="Logout" />
+                            </form>
+
                         </li>
                     </ul>
                 </li>
@@ -106,74 +113,47 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="clearfix"></div>
                         <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                     </li>
-                    <li class="sidebar-search-wrapper">
-                        <form class="search-form" role="form" action="{{ url('/') }}" method="get">
-                            <div class="input-icon right">
-                                <i class="fa fa-search"></i>
-                                <input type="text" class="form-control input-sm" name="query" placeholder="Search...">
-                            </div>
-                        </form>
+                    <li class="start active">
+                        <a href="{{ url('/') }}">
+                            <i class="icon-home"></i>
+                            <span class="title">Dashboard</span>
+                        </a>
                     </li>
                     <li class="start ">
-                        <a href="{{ url('/') }}">
-                           <i class="icon-home"></i>
-                           <span class="title">Dashboard</span>
+                        <a href="{{ url('/categories') }}">
+                            <i class="fa fa-bookmark"></i>
+                            Category
                         </a>
                     </li>
-                    <li>
-                        <a href="javascript:;">
-                           <i class="icon-puzzle"></i>
-                           <span class="title">Page</span>
-                           <span class="arrow "></span>
+                    <li class="start ">
+                        <a href="{{ url('/medicines') }}">
+                            <i class="fa fa-medkit"></i>
+                            Medicines
                         </a>
-                        <ul class="sub-menu">
-                           <li>
-                              <a href="{{ url('/categories') }}">
-                                 <i class="fa fa-bookmark"></i>
-                                 Category
-                              </a>
-                           </li>
-                           <li>
-                              <a href="{{ url('/medicines') }}">
-                                 <i class="fa fa-medkit"></i>
-                                 Medicines
-                              </a>
-                           </li>
-                           <li>
-                              <a href="{{ url('/showgrid') }}">
-                                 <i class="fa fa-stethoscope"></i>
-                                 Medicines Bentuk Grid
-                              </a>
-                           </li>
-                           <li>
-                              <a href="{{ route('transactions.index') }}">
-                                 <i class="fa fa-stethoscope"></i>
-                                 Transaction
-                              </a>
-                           </li>
-                           <li>
-                              <a href="{{ url('/suppliers') }}">
-                                 <i class="fa fa-stethoscope"></i>
-                                 Supplier
-                              </a>
-                           </li>
-                        </ul>
                     </li>
-                    <li class="active ">
-                        <a href="javascript:;">
-                            <i class="icon-present"></i>
-                            <span class="title">Reports</span>
-                            <span class="selected"></span>
-                            <span class="arrow open"></span>
+                    <li class="start ">
+                        <a href="{{ url('/showgrid') }}">
+                            <i class="fa fa-stethoscope"></i>
+                            Medicines Bentuk Grid
                         </a>
-                        <ul class="sub-menu">
-                           <li>
-                              <a href="{{ url('report/listhighestprice') }}">
-                                 <i class="fa fa-user-md"></i>
-                                 Report Highest Price
-                              </a>
-                           </li>
-                        </ul>
+                    </li>
+                    <li class="start ">
+                        <a href="{{ route('transactions.index') }}">
+                            <i class="fa fa-stethoscope"></i>
+                            Transaction
+                        </a>
+                    </li>
+                    <li class="start ">
+                        <a href="{{ url('/suppliers') }}">
+                            <i class="fa fa-stethoscope"></i>
+                            Supplier
+                        </a>
+                    </li>
+                    <li class="start ">
+                        <a href="{{ url('report/listhighestprice') }}">
+                            <i class="fa fa-user-md"></i>
+                            Report Highest Price
+                        </a>
                     </li>
                 </ul>
                 <!-- END SIDEBAR MENU -->
@@ -192,7 +172,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN FOOTER -->
     <div class="footer">
         <div class="footer-inner">
-            Kementrian Kesehatan Republik Indonesia. Kimia Farma
+            Kimia Farma
         </div>
         <div class="footer-tools">
             <span class="go-top">
@@ -227,4 +207,5 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
+
 </html>

@@ -96,6 +96,7 @@ class SupplierController extends Controller
    public function destroy(Supplier $supplier)
    {
       //dd($supplier);
+      $this->authorize('delete-permission', $supplier);
       try {
          $supplier->delete();
          return redirect()->route('suppliers.index')
@@ -165,6 +166,7 @@ class SupplierController extends Controller
     */
    public function deleteData(Request $request)
    {
+      $this->authorize('delete-permission', $request->get('id'));
       try {
          $id = $request->get('id');
          $supplier = Supplier::find($id);

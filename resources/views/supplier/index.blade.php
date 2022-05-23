@@ -61,18 +61,18 @@
                                         onclick="getEditForm2({{ $d->id }})">
                                         Edit B
                                     </a>
-                                    <a class="btn btn-danger btn-xs" href="#modalEdit" data-toggle="modal"
-                                        onclick="if(confirm('apakah anda yakin menghapus data {{ $d->name }}')) deleteDataRemoveTR({{ $d->id }})">
-                                        Delete 2
-                                    </a>
-
-
-                                    <form method="POST" action="{{ url('suppliers/' . $d->id) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type='submit' value='Hapus' class='btn btn-danger btn-xs'
-                                            onclick="if(!confirm('apakah anda yakin menghapus data {{ $d->name }}')) return false;" />
-                                    </form>
+                                    @can('delete-permission',$d)
+                                       <a class="btn btn-danger btn-xs" href="#modalEdit" data-toggle="modal"
+                                          onclick="if(confirm('apakah anda yakin menghapus data {{ $d->name }}')) deleteDataRemoveTR({{ $d->id }})">
+                                          Delete 2
+                                       </a>
+                                       <form method="POST" action="{{ url('suppliers/' . $d->id) }}">
+                                          @csrf
+                                          @method('DELETE')
+                                          <input type='submit' value='Hapus' class='btn btn-danger btn-xs'
+                                             onclick="if(!confirm('apakah anda yakin menghapus data {{ $d->name }}')) return false;" />
+                                       </form>
+                                    @endcan
                                 </th>
                             </tr>
                         @endforeach
@@ -189,7 +189,7 @@
                 },
                 success: function(data) {
                     if (data.status == 'ok') {
-                        alert(data.msg)
+                        alert(data.msg);
                         $('#td_' + id).remove();
                     } else {
                         alert(data.msg);
