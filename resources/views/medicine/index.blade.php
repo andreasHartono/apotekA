@@ -66,7 +66,7 @@
                         </div>
                      </td>
                      <td>
-                        <a class="btn btn-info" data-toggle="modal" href="{{ url('medicines/'.$d->id) }}" 
+                        <a class="btn btn-info btn-xs" data-toggle="modal" href="{{ url('medicines/'.$d->id) }}" 
                            data-target="#show{{$d->id}}">
                            Detail
                         </a>
