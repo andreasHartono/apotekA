@@ -123,6 +123,7 @@ class MedicineController extends Controller
     */
    public function destroy(Medicine $medicine)
    {
+      $this->authorize('delete-permission');
       try {
          $medicine->delete();
          return redirect()->route('medicines.index')
