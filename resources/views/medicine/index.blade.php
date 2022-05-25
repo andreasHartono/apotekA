@@ -70,8 +70,8 @@
                            data-target="#show{{$d->id}}">
                            Detail
                         </a>
-                        <a class="btn btn-warning btn-xs" href="{{ url('medicines/'.$d->id.'/edit') }}">Ubah</a>
                         @can('delete-permission')
+                           <a class="btn btn-warning btn-xs" href="{{ url('medicines/'.$d->id.'/edit') }}">Ubah</a>
                            <form method="POST" action="{{ url('medicines/'.$d->id) }}" >
                               @csrf
                               @method('DELETE')

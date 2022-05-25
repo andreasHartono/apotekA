@@ -21,13 +21,14 @@ Route::get('/home', function () {
    return view('home');
 });
 
-Route::resource('medicines', 'MedicineController');
-Route::resource('categories', 'CategoryController');
+
 Route::get('coba1', 'MedicineController@coba1');
 Route::get('coba2', 'MedicineController@coba2');
 
 
 Route::middleware(['auth'])->group(function () {
+   Route::resource('medicines', 'MedicineController');
+   Route::resource('categories', 'CategoryController');
    Route::post('/medicines/showInfo', 'MedicineController@showInfo')->name('medicines.showInfo');
    Route::get('showgrid', 'MedicineController@showgrid');
    Route::get('report/listmedicine/{id}', 'CategoryController@showlist');

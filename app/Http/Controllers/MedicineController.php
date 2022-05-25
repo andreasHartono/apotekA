@@ -99,6 +99,7 @@ class MedicineController extends Controller
     */
    public function update(Request $request, Medicine $medicine)
    {
+      $this->authorize('delete-permission');
       $data = new Medicine();
       $data->generic_name = $request->get('name');
       $data->form = $request->get('form');
