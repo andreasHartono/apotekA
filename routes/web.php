@@ -28,6 +28,9 @@ Route::get('coba2', 'MedicineController@coba2');
 
 Route::middleware(['auth'])->group(function () {
    Route::resource('medicines', 'MedicineController');
+   Route::post('/medicines/getEditForm', 'MedicineController@getEditForm')->name('medicines.getEditForm');
+   Route::post('/medicines/saveData', 'MedicineController@saveData')->name('medicines.saveData');
+   Route::post('/medicine/deleteData', 'MedicineController@deleteData')->name('medicines.deleteData');
    Route::resource('categories', 'CategoryController');
    Route::post('/medicines/showInfo', 'MedicineController@showInfo')->name('medicines.showInfo');
    Route::get('showgrid', 'MedicineController@showgrid');

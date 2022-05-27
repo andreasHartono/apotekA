@@ -24,13 +24,14 @@ class MedicineController extends Controller
 
       // eloquent model orm
       $result = Medicine::all();
+      $categories = Category::all();
       // dengan compact
       //return view('medicine.index', compact('result'));
 
       // dengan menamai parameter
-      return view('medicine.index', ['data' => $result]);
+      return view('medicine.index', ['data' => $result,'categories'=>$categories]);
    }
-
+   
    /**
     * Show the form for creating a new resource.
     *
@@ -59,7 +60,7 @@ class MedicineController extends Controller
       $data->category_id = $request->get('category');
       $data->faskes1 = 0;
       $data->faskes2 = 1;
-      $data->faskes3 = 2;
+      $data->faskes3 = 1;
       $data->image = $request->get('name').'jpg';
       $data->save();
       return redirect()->route('medicines.index')->with('status','data medicines berhasil di tambah');
@@ -109,7 +110,7 @@ class MedicineController extends Controller
       $data->category_id = $request->get('category');
       $data->faskes1 = 0;
       $data->faskes2 = 1;
-      $data->faskes3 = 2;
+      $data->faskes3 = 1;
       $data->image = $request->get('name') . 'jpg';
       $data->save();
       return redirect()->route('medicines.index')->with('status', 'data medicines berhasil di ubah');
@@ -135,6 +136,54 @@ class MedicineController extends Controller
       }
    }
 
+   public function getEditForm(Request $request)
+   {
+      $id = $request->get('id');
+      $data = Medicine::find($id);
+      $categories = Category::all();
+      // dd($data);
+      return response()->json(array(
+         'status' => 'oke',
+         'msg' => view('medicine.getEditForm', compact('data','categories'))->render()
+      ), 200);
+   }
+
+   public function saveData(Request $request)
+   {
+      //dd($request);
+      $this->authorize('delete-permission');
+      $id = $request->get('id');
+      $supplier = Medicine::find($id);
+      $supplier->name = $request->get('name');
+      $supplier->address = $request->get('address');
+      $supplier->save();
+      return redirect()->json(array(
+         'status' => 'ok',
+         'msg' => 'data medicine berhasil diupdate melalui modal'
+      ), 200);
+   }
+
+   public function deleteData(Request $request)
+   {
+      $this->authorize('delete-permission', $request->get('id'));
+      try {
+         $id = $request->get('id');
+         $supplier = Medicine::find($id);
+         $supplier->delete();
+         return redirect()->json(array(
+            'status' => 'ok',
+            'msg' => 'data medicine berhasil dihapus'
+         ), 200);
+      } catch (\PDOException $e) {
+         return redirect()->json(array(
+            'status' => 'error',
+            'msg' => 'Data Gagal dihapus. Silahkan hubungi administrator'
+         ), 200);
+      }
+      //dd($request);
+
+   }
+   
    public function coba1()
    {
       // query builder filter

@@ -80,30 +80,18 @@
                                 <label class="control-label col-md-3">Faskes</label>
                                 <div class="col-md-4">
                                     <div class="checkbox-list">
-                                        <label>
-                                            <div class="checker">
-                                                <span>
-                                                    <input type="checkbox" name="faskes1" value="0" />
-                                                </span>
-                                            </div>
-                                             Faskes 1
-                                        </label>
-                                        <label>
-                                            <div class="checker">
-                                                <span>
-                                                    <input type="checkbox" name="faskes2" value="0" />
-                                                </span>
-                                            </div>
-                                            Faskes 2
-                                        </label>
-                                        <label>
-                                            <div class="checker">
-                                                <span>
-                                                    <input type="checkbox" name="faskes3" value="0" />
-                                                </span>
-                                            </div>
-                                            Faskes 3
-                                        </label>
+                                        <div class="form-check">
+                                            <input type="checkbox" name="faskes" id="faskes1" value="fakses1">
+                                            <label for="faskes1">Faskes 1</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" name="faskes" id="faskes2" value="fakses2">
+                                            <label for="faskes2">Faskes 2</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" name="faskes" id="faskes3" value="fakses3">
+                                            <label for="faskes3">Faskes 3</label>
+                                        </div>
                                     </div>
                                 </div>
 
