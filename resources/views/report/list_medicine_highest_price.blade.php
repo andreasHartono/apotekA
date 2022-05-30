@@ -1,4 +1,4 @@
-@extends('layout.conquer2')
+@extends('layouts.conquer2')
 @section('content')
    <div class="portlet">
       <div class="portlet-title">
