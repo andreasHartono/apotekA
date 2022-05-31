@@ -1,7 +1,7 @@
 @extends('layouts.conquer2')
 @section('content')
    <div class="flex-center position-ref full-height">
-      {{-- @if (Route::has('login'))
+      @if (Route::has('login'))
          <div class="top-right links">
             @auth
                <a href="{{ url('/home') }}">Home</a>
@@ -13,7 +13,7 @@
                @endif
             @endauth
          </div>
-      @endif --}}
+      @endif
       <h3 class="page-title">
 			Welcome <small>Selamat datang!</small>
 		</h3>

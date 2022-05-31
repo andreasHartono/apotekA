@@ -45,5 +45,7 @@ Route::middleware(['auth'])->group(function () {
    Route::get('/submit_checkout', 'TransactionController@submit_front')->name('submitcheckout');
    Route::get('/cetakpemesanan/{id}', 'TransactionController@print_detail')->name('cetakpesan');
 });
-
+Route::get('/welcome',function() {
+   return view('welcome');
+});
 Route::get('/home', 'HomeController@index')->name('home');
