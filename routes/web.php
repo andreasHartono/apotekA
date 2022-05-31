@@ -13,19 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-   return view('welcome');
-});
-
+Route::get('/', 'MedicineController@front_index');
+Route::get('cart','MedicineController@cart');
+Route::get('add-to-cart/{id}','MedicineController@addToCart');
 Route::get('/home', function () {
    return view('home');
 });
 
-
 Route::get('coba1', 'MedicineController@coba1');
 Route::get('coba2', 'MedicineController@coba2');
 
-
+Auth::routes();
 Route::middleware(['auth'])->group(function () {
    Route::resource('medicines', 'MedicineController');
    Route::post('/medicines/getEditForm', 'MedicineController@getEditForm')->name('medicines.getEditForm');
@@ -43,7 +41,9 @@ Route::middleware(['auth'])->group(function () {
    Route::post('/suppliers/getEditForm2', 'SupplierController@getEditForm2')->name('supplier.getEditForm2');
    Route::post('/suppliers/saveData', 'SupplierController@saveData')->name('supplier.saveData');
    Route::post('/suppliers/deleteData', 'SupplierController@deleteData')->name('supplier.deleteData');
+   Route::get('/checkout', 'TransactionController@form_submit_front');
+   Route::get('/submit_checkout', 'TransactionController@submit_front')->name('submitcheckout');
+   Route::get('/cetakpemesanan/{id}', 'TransactionController@print_detail')->name('cetakpesan');
 });
 
-Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

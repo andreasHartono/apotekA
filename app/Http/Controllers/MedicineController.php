@@ -16,12 +16,6 @@ class MedicineController extends Controller
     */
    public function index()
    {
-      // raw query
-      //$result = DB::select(DB::raw("select * from medicines"));
-
-      // query builder
-      //$result = DB::table('medicines')->get();
-
       // eloquent model orm
       $result = Medicine::all();
       $categories = Category::all();
@@ -29,9 +23,8 @@ class MedicineController extends Controller
       //return view('medicine.index', compact('result'));
 
       // dengan menamai parameter
-      return view('medicine.index', ['data' => $result,'categories'=>$categories]);
+      return view('medicine.index', ['data' => $result, 'categories' => $categories]);
    }
-   
    /**
     * Show the form for creating a new resource.
     *
@@ -40,7 +33,7 @@ class MedicineController extends Controller
    public function create()
    {
       $categories = Category::all();
-      return view('medicine.create',compact('categories'));
+      return view('medicine.create', compact('categories'));
    }
 
    /**
@@ -61,9 +54,9 @@ class MedicineController extends Controller
       $data->faskes1 = 0;
       $data->faskes2 = 1;
       $data->faskes3 = 1;
-      $data->image = $request->get('name').'jpg';
+      $data->image = $request->get('name') . 'jpg';
       $data->save();
-      return redirect()->route('medicines.index')->with('status','data medicines berhasil di tambah');
+      return redirect()->route('medicines.index')->with('status', 'data medicines berhasil di tambah');
    }
 
    /**
@@ -88,7 +81,7 @@ class MedicineController extends Controller
    {
       $data = $medicine;
       $categories = Category::all();
-      return view('medicine.edit', compact('data','categories'));
+      return view('medicine.edit', compact('data', 'categories'));
    }
 
    /**
@@ -114,7 +107,6 @@ class MedicineController extends Controller
       $data->image = $request->get('name') . 'jpg';
       $data->save();
       return redirect()->route('medicines.index')->with('status', 'data medicines berhasil di ubah');
-
    }
 
    /**
@@ -129,10 +121,10 @@ class MedicineController extends Controller
       try {
          $medicine->delete();
          return redirect()->route('medicines.index')
-         ->with('status', 'data berhasil dihapus');
+            ->with('status', 'data berhasil dihapus');
       } catch (\PDOException $e) {
          return redirect()->route('medicines.index')
-         ->with('error', 'Data Gagal dihapus. Pastikan data child tidak berhubungan');
+            ->with('error', 'Data Gagal dihapus. Pastikan data child tidak berhubungan');
       }
    }
 
@@ -144,7 +136,7 @@ class MedicineController extends Controller
       // dd($data);
       return response()->json(array(
          'status' => 'oke',
-         'msg' => view('medicine.getEditForm', compact('data','categories'))->render()
+         'msg' => view('medicine.getEditForm', compact('data', 'categories'))->render()
       ), 200);
    }
 
@@ -181,8 +173,41 @@ class MedicineController extends Controller
          ), 200);
       }
       //dd($request);
-
    }
+   
+   public function cart()
+   {
+      return view('frontend.cart');
+   }
+   
+   public function front_index()
+   {
+      $result = Medicine::all();
+      $categories = Category::all();
+      return view('frontend.product', ['data' => $result, 'categories' => $categories]);
+   }
+
+   public function addToCart($id)
+   {
+      $m = Medicine::find($id);
+      $cart = session()->get('cart');
+      if (!isset($cart[$id])) 
+      {
+         $cart[$id]=[
+            "name"=>$m->generic_name,
+            "quantity"=>1,
+            "price"=>$m->price,
+            "photo"=>$m->image
+         ];
+      }
+      else {
+         $cart[$id]['quantity']++;
+      }
+      session()->put('cart',$cart);
+      return redirect()->back()->with('success','Medicine berhasil ditambahkan ke cart!');
+   }
+
+   
    
    public function coba1()
    {

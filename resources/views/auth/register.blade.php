@@ -67,7 +67,9 @@
                               <input type="radio" name="roles" class="@error('roles') is-invalid @enderror" id="owner" value="owner">
                               <label for="owner">Pemilik</label><br>
                               <input type="radio" name="roles" id="pegawai" class="@error('roles') is-invalid @enderror" value="pegawai">
-                              <label for="pegawai">Karyawan</label>
+                              <label for="pegawai">Karyawan</label><br />
+                              <input type="radio" name="roles" id="member" class="@error('roles') is-invalid @enderror" value="member">
+                              <label for="member">Member</label>
 
                               @error('roles')
                                  <span class="invalid-feedback" role="alert">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       $this->authorize('checkmember');
+       
+       $user = Auth::user();
+       $trans = Transaction::where('user_id',$user->id)->get();
+       return view('home',compact('trans'));
     }
 }

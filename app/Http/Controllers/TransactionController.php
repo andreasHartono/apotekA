@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Transaction;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 class TransactionController extends Controller
 {
    /**
@@ -46,7 +47,7 @@ class TransactionController extends Controller
     */
    public function show(Transaction $transaction)
    {
-      //
+      return view('transaction.show',compact('transaction'));
    }
 
    /**
@@ -91,5 +92,40 @@ class TransactionController extends Controller
       return response()->json(array(
          'msg' => view('transaction.showmodal',compact('data','medicine'))->render()
       ),200);
+   }
+
+   public function form_submit_front()
+   {
+      $this->authorize('checkmember');
+      return view('frontend.checkout');
+   }
+
+   public function submit_front()
+   {
+      $this->authorize('checkmember');
+
+      $cart = session()->get('cart');
+      $user = Auth::user();
+
+      $t = new Transaction;
+      $t->user_id = $user->id;
+      $t->buyer_id = 1;
+      $t->transaction_date = Carbon::now()->toDateTimeString();
+      $t->save();
+
+      // $totalharga = $t->insertProduct($cart,$user);
+      // $t->total = $totalharga;
+      // $t->save();
+
+      session()->forget('cart');
+      return redirect('/');
+   }
+
+   public function print_detail($id_transaction) 
+   {
+      $transaction = Transaction::find($id_transaction);
+      $pdf = PDF::loadView('frontend.detailpdf',['transaction'=>$transaction]);
+      $name="laporan-pemesanan".$transaction->id.$transaction->transaction_date."-pdf";
+      return $pdf->download($name);
    }
 }

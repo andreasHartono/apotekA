@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Cart')
+@section('title', 'Checkout')
 
 @section('content')
     <table id="cart" class="table table-hover table-condensed">
@@ -47,7 +47,7 @@
                 <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue
                         Shopping</a></td>
                 <td class="hidden-xs"></td>
-                <td class="hidden-xs"><a href="{{ url('/checkout') }}" class="btn btn-danger"> Checkout
+                <td class="hidden-xs"><a href="{{ route('submitcheckout') }}" class="btn btn-danger"> Finish
                <i class="fa fa-angle-right"></i></a></td>
                 <td class="hidden-xs text-center"><strong>Total Rp. {{ $total }}</strong></td>
             </tr>
