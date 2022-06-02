@@ -12,13 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/home', function () {
+   return view('home');
+});
+Route::get('/welcome',function() {
+   return view('welcome');
+});
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'MedicineController@front_index');
 Route::get('cart','MedicineController@cart');
 Route::get('add-to-cart/{id}','MedicineController@addToCart');
-Route::get('/home', function () {
-   return view('home');
-});
 
 Route::get('coba1', 'MedicineController@coba1');
 Route::get('coba2', 'MedicineController@coba2');
@@ -45,7 +49,3 @@ Route::middleware(['auth'])->group(function () {
    Route::get('/submit_checkout', 'TransactionController@submit_front')->name('submitcheckout');
    Route::get('/cetakpemesanan/{id}', 'TransactionController@print_detail')->name('cetakpesan');
 });
-Route::get('/welcome',function() {
-   return view('welcome');
-});
-Route::get('/home', 'HomeController@index')->name('home');
