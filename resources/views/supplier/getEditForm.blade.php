@@ -1,4 +1,4 @@
-<form role="form" method="POST" action="{{ url('suppliers/'.$data->id) }}" class="form-horizontal">
+<form enctype='multipart/form-data' role="form" method="POST" action="{{ url('suppliers/'.$data->id) }}" class="form-horizontal">
     @csrf
     @method('PUT')
     <div class="modal-header">

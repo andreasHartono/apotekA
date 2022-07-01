@@ -45,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
    Route::post('/suppliers/getEditForm2', 'SupplierController@getEditForm2')->name('supplier.getEditForm2');
    Route::post('/suppliers/saveData', 'SupplierController@saveData')->name('supplier.saveData');
    Route::post('/suppliers/deleteData', 'SupplierController@deleteData')->name('supplier.deleteData');
+   Route::post('suppliers/saveDataField','SupplierController@saveDataField')->name('supplier.saveDataField');
    Route::get('/checkout', 'TransactionController@form_submit_front');
    Route::get('/submit_checkout', 'TransactionController@submit_front')->name('submitcheckout');
    Route::get('/cetakpemesanan/{id}', 'TransactionController@print_detail')->name('cetakpesan');

@@ -10,7 +10,7 @@
                 <div class="col-xs-18 col-sm-6 col-md-3">
                     <div class="thumbnail">
                         <img src="{{ asset('assets/images/' . $m->image) }}" width="500" height="300"
-                            alt="{{ $m->image }}">
+                            alt="{{ $m->image }}" />
                         <div class="caption">
                             <h4>{{ $m->generic_name }}</h4>
                             {{-- <p>{{ Str::limit(strtolower($m->description),50) }}</p> --}}
@@ -21,6 +21,6 @@
                     </div>
                 </div>
             @endforeach
-        </div><!-- End row -->
+        </div>
     </div>
 @endsection

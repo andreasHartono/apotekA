@@ -1,22 +1,5 @@
 <!DOCTYPE html>
-<!--
-Template Name: Conquer - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
-Version: 2.0
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-template/3716838?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
 <html lang="en" class="no-js">
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
-
 <head>
     <meta charset="utf-8" />
     <title>APOTIK A</title>
@@ -187,6 +170,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END FOOTER -->
     <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
     <!-- BEGIN CORE PLUGINS -->
+   
+
     <script src="{{ asset('assets/plugins/jquery-1.11.0.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/plugins/jquery-migrate-1.2.1.min.js') }}" type="text/javascript"></script>
     <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
@@ -208,7 +193,10 @@ License: You must have a valid license purchased only from themeforest(the above
             App.init();
         });
     </script>
+
+    <script src="{{ asset('assets/plugins/jquery.editable.min.js') }}" type="text/javascript"></script>
     <!-- END JAVASCRIPTS -->
+   @yield('initialscript')
 </body>
 <!-- END BODY -->
 

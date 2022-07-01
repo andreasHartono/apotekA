@@ -39,6 +39,13 @@ class SupplierController extends Controller
    public function store(Request $request)
    {
       $data = new Supplier();
+
+      $file=$request->file('logo');
+      $imgFolder='images';
+      $imgFile=time()."_".$file.getClientOriginalName();
+      $file->move($imgFolder,$imgFile);
+      $data->logo=$imgFile;
+
       $data->name = $request->get('name');
       $data->address = $request->get('address');
       $data->save();
@@ -183,5 +190,20 @@ class SupplierController extends Controller
       }
       //dd($request);
 
+   }
+
+   public function saveDataField(Request $request) 
+   {
+      $id=$request->id;
+      $fname=$request->fname;
+      $value=$request->value;
+
+      $supplier=Supplier::find($id);
+      $supplier->$fname = $value;
+      $supplier->save();
+      return response()->json(array(
+         'status'=>'ok',
+         'msg'=>'supplier berhasil di ubah'
+      ),200);
    }
 }

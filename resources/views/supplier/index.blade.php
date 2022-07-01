@@ -36,8 +36,8 @@
         <div class="portlet-body">
             <a class='btn btn-success btn-sm' href="{{ route('suppliers.create') }}">Tambah Supplier</a>
             <a class='btn btn-success btn-sm' href="#modalCreate" data-toggle="modal">Tambah Supplier (Modal)</a>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover table-responsive">
+            <div class="table-scrollable">
+                <table class="table table-hover dataTable" role="grid" aria-describedby="sample_editable_1_info" style="width: 1240px;">
                     <thead>
                         <tr>
                             <th>Nama</th>
@@ -48,8 +48,8 @@
                     <tbody>
                         @foreach ($result as $d)
                             <tr id='tr_{{ $d->id }}'>
-                                <td id="td_name_{{ $d->id }}">{{ $d->name }}</td>
-                                <td id="td_address_{{ $d->id }}">{{ $d->address }}</td>
+                                <td class="editable" id="td_name_{{ $d->id }}">{{ $d->name }}</td>
+                                <td class="editable" id="td_address_{{ $d->id }}">{{ $d->address }}</td>
                                 <th>
                                     <a class="btn btn-warning btn-xs"
                                         href="{{ url('suppliers/' . $d->id . '/edit') }}">Edit</a>
@@ -61,17 +61,17 @@
                                         onclick="getEditForm2({{ $d->id }})">
                                         Edit B
                                     </a>
-                                    @can('delete-permission',$d)
-                                       <a class="btn btn-danger btn-xs" href="#modalEdit" data-toggle="modal"
-                                          onclick="if(confirm('apakah anda yakin menghapus data {{ $d->name }}')) deleteDataRemoveTR({{ $d->id }})">
-                                          Delete 2
-                                       </a>
-                                       <form method="POST" action="{{ url('suppliers/' . $d->id) }}">
-                                          @csrf
-                                          @method('DELETE')
-                                          <input type='submit' value='Hapus' class='btn btn-danger btn-xs'
-                                             onclick="if(!confirm('apakah anda yakin menghapus data {{ $d->name }}')) return false;" />
-                                       </form>
+                                    @can('delete-permission', $d)
+                                        <a class="btn btn-danger btn-xs" href="#modalEdit" data-toggle="modal"
+                                            onclick="if(confirm('apakah anda yakin menghapus data {{ $d->name }}')) deleteDataRemoveTR({{ $d->id }})">
+                                            Delete 2
+                                        </a>
+                                        <form method="POST" action="{{ url('suppliers/' . $d->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type='submit' value='Hapus' class='btn btn-danger btn-xs'
+                                                onclick="if(!confirm('apakah anda yakin menghapus data {{ $d->name }}')) return false;" />
+                                        </form>
                                     @endcan
                                 </th>
                             </tr>
@@ -84,7 +84,7 @@
     <div class="modal fade" id="modalCreate" tabindex="-1" role="basic" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form role="form" method="POST" action="{{ url('suppliers') }}">
+                <form entype="multipart/form-data" role="form" method="POST" action="{{ url('suppliers') }}">
                     @csrf
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
@@ -94,13 +94,16 @@
                         <div class="form-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="isikan nama supplier">
-                                <span class="help-block">
-                                    *tulis nama lengkap perusahaan </span>
+                                <input type="text" class="form-control" name="name"
+                                    placeholder="isikan nama supplier">
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
                                 <textarea name="address" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Logo</label>
+                                <input type="file" name="logo" id="logo" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -116,7 +119,7 @@
     <div class="modal fade" id="modalEdit" tabindex="-1" role="basic" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" id="modalContent">
-               
+
             </div>
         </div>
     </div>
@@ -137,7 +140,7 @@
                     $("#modalContent").html(data.msg);
                 },
                 error: function(data) {
-                   console.log('error');
+                    console.log('error');
                     alert(data);
                 }
             });
@@ -197,5 +200,33 @@
                 }
             });
         }
+    </script>
+@endsection
+@section('initialscript')
+    <script type="text/javascript">
+        $('.editable').editable({
+         closeOnEnter :true,
+         callback: function(data) {
+            if(data.content) 
+            {
+               //alert(data.content);
+               var s_id=data.$el[0].id;
+               var fname=s_id.split('_')[1];
+               var id=s_id.split('_')[2];
+               $.ajax({
+                  type:'POST',
+                  url: '{{ route("supplier.saveDataField") }}',
+                  data: {'_token': '<?php echo csrf_token() ?>', 
+                        'id':id,
+                        'fname':fname,
+                        'value':data.content
+                     },
+                  success: function(data) {
+                     alert(data.msg);
+                  }
+               });
+            }
+         }
+        });
     </script>
 @endsection
